@@ -1,0 +1,17 @@
+<h2><%= data.name %></h2>
+<div class="columns">
+
+  <ul class="stats">
+    <li> <b>School:</b> <%= data.school %>
+  <li> <b>Position:</b> <%= data.position %>
+  <% if (data.position !== "Coach") { %>
+  <li> <b>Year:</b> <%= data.year %>
+    <li> <b>Sport:</b> <%= data.sport %>
+    <% } %>
+    <li class="view-larger"> <a href=".<%= data.image %>" target="_blank">View larger image &raquo;</a>
+  </ul>
+
+  <div class="blurb">
+    <%= data.blurb %>
+  </div>
+</div>

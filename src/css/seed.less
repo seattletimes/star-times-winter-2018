@@ -1,0 +1,205 @@
+body {
+  // background: black
+}
+
+@import "seattletimes";
+@import "flexbox";
+
+@image-height: 550px;
+@image-width: 366px;
+
+.ad {
+  margin: auto;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.interactive {
+  max-width: 1200px;
+  padding: 0 20px 40px;
+  margin: auto;
+  // color: @df-light-gray;
+}
+
+.toplevel {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.video-container {
+  float: right;
+  width: 480px;
+  max-width: 50%;
+  margin-left: 40px;
+  margin-bottom: 40px;
+
+  @media @tablet {
+    float: none;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .aspect-inner {
+    padding-bottom: percentage(9 / 16);
+    position: relative;
+  }
+
+  iframe, video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slider {
+	.display-flex;
+  max-width: 1200px;
+  // height is set manually - update when we have real images
+  height: @image-height;
+  margin: 20px auto 0;
+  clear: both;
+
+
+  a.pan {
+    background: white;
+    .display-flex;
+    .align-items(center);
+    font-size: 32px;
+    text-align: center;
+    padding: 0 8px;
+    color: @df-dark-gray;
+
+    &:hover {
+      background: @df-light-gray;
+      color: black;
+    }
+
+    .touch-enabled & {
+      display: none;
+    }
+  }
+
+  .slide-container {
+    box-shadow: inset 4px 4px 12px rgba(0, 0, 0, .5);
+    overflow: hidden;
+
+    //on mobile, the buttons go away and we use touch scrolling
+    .touch-enabled & {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .row {
+    .flex(1 1 90%);
+    .display-flex;
+    .justify-content(flex-start);
+    position: relative;
+    transition: .2s ease-in-out;
+  }
+}
+
+.student {
+  .flex(1 0 @image-width);
+  width: @image-width;
+  overflow: hidden;
+  position: relative;
+
+  .image-frame {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  img {
+    max-height: 100%;
+    height: @image-height;
+  }
+
+  &.activated {
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      border-color: transparent transparent #888 transparent;
+      border-style: solid;
+      border-width: 0 20px 40px;
+      // border: 20px solid white;
+      transform: translateX(-50%);
+      bottom: 0px;
+      left: 50%;
+      z-index: 999;
+    }
+  }
+}
+
+.details {
+  max-width: 1200px;
+  margin: auto;
+  background: @df-off-white;
+  padding: 40px;
+  font-family: @df-sans;
+  color: @df-dark-gray;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 0 0 10px 10px;
+
+  h3 {
+    color: black;
+  }
+
+  // Change left-right padding on blurb for desktop, tablet, and mobile
+  &.has-content {
+    text-align: left;
+    font-size: 15px;
+    padding: 20px 200px;
+
+    @media @tablet {
+      padding: 20px 20px;
+    }
+
+    @media @mobile {
+      padding: 20px 20px;
+    }
+  }
+
+  h2 {
+    margin: 0px;
+    color: @df-dark-gray;
+  }
+
+  .columns {
+    .display-flex();
+
+    @media @mobile {
+      display: block;
+    }
+
+    .stats {
+      .flex(1);
+    }
+
+    .blurb {
+      .flex(2);
+    }
+    .view-larger {
+      padding-top: 16px;
+    }
+  }
+
+  .stats {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.credit {
+  font-family: @df-sans;
+  font-size: 14px;
+  // color: #808080;
+  padding-top: 20px;
+}

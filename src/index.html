@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_head.html") %>
+  </head>
+  <body>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <%= t.include("partials/_ad.html", { type: "banner" }) %>
+
+    <main class="interactive">
+
+      <div class="tiles">
+        <center><img src="./assets/usethisone.gif" alt= ></center>
+      </div>
+
+      <div class="toplevel"
+        <h1><img src="./assets/startimes-logo1000.jpg" alt="Seattle Times Star Times: Spring 2017" style="padding-bottom: 20px; color: @df-light-gray;"></h1>
+
+
+
+      </div><center>
+          <p>Three times a year, The Seattle Times honors the best athletes and coaches in Seattle-area high-school team sports with its Star Times all-area teams. The Spring selections are for baseball, softball and boys' soccer.</p>
+          <p>Seattle Times staffers and freelancers select Star Times all-area honorees from athletes in King and Snohomish counties, plus schools in the Metro and WesCo conferences. Meet the spring 2017 selections below.</p>
+          <p class="credit">Published May 22 2017</p></center>
+      </div>
+      <section class="slider">
+        <a class="pan left" href="javascript:;">&laquo;</a>
+        <div class="slide-container">
+          <div class="row">
+            <% json.StarTimesSpring2017_stars.forEach(function(student, i) { %>
+            <div class="student">
+              <div class="image-frame">
+                <!-- replace this image's URL with the actual student images when available -->
+                <img src="./assets/athletes/<%= student.image %>" data-student="<%= student.name %>">
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+        <a class="pan right" href="javascript:;">&raquo;</a>
+      </section>
+      <section class="details">
+        <h3>Click or tap on an athlete for details.</h3>
+      </section>
+
+      <div class="credit">
+      Photos by Bettina Hansen<br/>
+      Athlete bios by Jayda Evans, Sandy Ringer, Matt Massey<br/>
+      Production by Sean Quinton
+      </div>
+
+    </main>
+
+    <%= t.include("partials/_navBottom.html") %>
+
+    <script>
+studentData = <%= JSON.stringify(json.StarTimesSpring2017_stars) %>;
+    </script>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
