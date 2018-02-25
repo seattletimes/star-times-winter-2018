@@ -15,13 +15,12 @@
 
     <main class="interactive">
 
-      <div class="tiles">
-        <center><img src="./assets/star-times-group.png" alt="Seattle Times Star Times: Winter 2018"></center>
-      </div>
-
       <div class="toplevel"
-        <h1><img src="./assets/startimes-logo1000.jpg" alt="Seattle Times Star Times: Winter 2018" style="padding-bottom: 20px; color: @df-light-gray;"></h1>
+        <h1><img src="./assets/startimes-logo1000.jpg" alt="Seattle Times Star Times: Winter 2018" style="padding-top: 20px; color: @df-light-gray;"></h1>
 
+      <div class="tiles">
+        <center><img src="./assets/star-times-group.png" alt="Seattle Times Star Times: Winter 2018" width="800"></center>
+      </div>
 
 
       </div><center>
@@ -33,7 +32,7 @@
         <a class="pan left" href="javascript:;">&laquo;</a>
         <div class="slide-container">
           <div class="row">
-            <% json.StarTimesSpring2017_stars.forEach(function(student, i) { %>
+            <% json.StarTimesWinter2018_stars.forEach(function(student, i) { %>
             <div class="student">
               <div class="image-frame">
                 <!-- replace this image's URL with the actual student images when available -->
@@ -60,7 +59,7 @@
     <%= t.include("partials/_navBottom.html") %>
 
     <script>
-studentData = <%= JSON.stringify(json.StarTimesSpring2017_stars) %>;
+studentData = <%= JSON.stringify(json.StarTimesWinter2018_stars) %>;
     </script>
 
     <script src="app.js" async></script>
