@@ -6,12 +6,12 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": "/2017/star-times-spring-2017"
+      "path": "/2018/sports/star-times-winter"
     }
   },
-  "title": "Meet the Star Times high school stars: Spring 2017",
-  "description": "Get to know The Seattle Times' spring 2017 selections for its Star Times all-area teams, honoring the best high-school basketball players in the Seattle area.",
-  "url": "http://projects.seattletimes.com/2017/sports/star-times-spring-2017",
+  "title": "Meet the Star Times high school stars: Winter 2018",
+  "description": "Get to know The Seattle Times' Winter 2018 selections for its Star Times all-area teams, honoring the best boys and girls high-school basketball players in and around Seattle.",
+  "url": "http://projects.seattletimes.com/2018/sports/star-times-winter",
   "slug": "Star Times Spring 2017",
   "tags": [],
   "image": "assets/startimessocial.jpg",
